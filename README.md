@@ -162,14 +162,31 @@ These features activate automatically when the `NEXT_PUBLIC_WS_URL` environment 
 
 ## 🚀 Deployment
 
+### GitHub Pages
+
+This repo already includes a GitHub Pages workflow in `.github/workflows/deploy-github-pages.yml`.
+
+To publish it correctly:
+
+1. Push the repository to GitHub
+2. Go to **Settings > Pages**
+3. In **Build and deployment**, set **Source** to **GitHub Actions**
+4. Push to `main` or run the workflow manually from **Actions**
+
+> If Pages is configured as **Deploy from a branch**, GitHub may serve the repository root and show the `README.md` instead of the app.
+
+For project repositories, the workflow automatically publishes with `basePath=/<repo-name>`. For user repositories named `<user>.github.io`, it publishes from root.
+
+### Vercel
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Naresh-Khatri/3d-portfolio)
 
-This site is deployed on **Vercel**. To deploy your own:
+If you prefer Vercel:
 
 1. Push your code to a GitHub repository
 2. Connect the repository to [Vercel](https://vercel.com)
 3. Add your environment variables in the Vercel dashboard
-4. Vercel handles the rest — automatic deployments on every push
+4. Vercel handles the rest automatically
 
 ---
 
