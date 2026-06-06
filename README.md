@@ -164,18 +164,23 @@ These features activate automatically when the `NEXT_PUBLIC_WS_URL` environment 
 
 ### GitHub Pages
 
-This repo already includes a GitHub Pages workflow in `.github/workflows/deploy-github-pages.yml`.
+This repo can be published for free without GitHub Actions by deploying the static export to a dedicated `gh-pages` branch.
 
-To publish it correctly:
+1. Go to **Settings > Pages**
+2. In **Build and deployment**, set **Source** to **Deploy from a branch**
+3. Select branch `gh-pages`
+4. Select folder `/ (root)`
+5. Save
 
-1. Push the repository to GitHub
-2. Go to **Settings > Pages**
-3. In **Build and deployment**, set **Source** to **GitHub Actions**
-4. Push to `main` or run the workflow manually from **Actions**
+Then publish the static site:
 
-> If Pages is configured as **Deploy from a branch**, GitHub may serve the repository root and show the `README.md` instead of the app.
+```bash
+npm run publish:pages
+```
 
-For project repositories, the workflow automatically publishes with `basePath=/<repo-name>`. For user repositories named `<user>.github.io`, it publishes from root.
+The script builds the project, copies `out/` into a clean `gh-pages` worktree, writes `.nojekyll`, commits the static files, and pushes that branch.
+
+> Do not point Pages to `main` or `github-pages-deploy`, because those branches contain the source code and README rather than the exported site.
 
 ### Vercel
 
