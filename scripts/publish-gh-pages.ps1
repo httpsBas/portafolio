@@ -18,21 +18,40 @@ function Invoke-Step {
   }
 }
 
+function Get-RepositoryBasePath {
+  $repoUrl = (git remote get-url origin).Trim()
+
+  if (-not $repoUrl) {
+    return ""
+  }
+
+  if ($repoUrl -match '[:/]([^/:\s]+?)(?:\.git)?$') {
+    $repoName = $Matches[1]
+
+    if ($repoName -and $repoName -notmatch '^[^/]+\.github\.io$') {
+      return "/$repoName"
+    }
+  }
+
+  return ""
+}
+
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $outDir = Join-Path $repoRoot "out"
 $tempRoot = Join-Path $repoRoot ".tmp"
 $worktreeDir = Join-Path $tempRoot "gh-pages-worktree"
 $nvsPath = Join-Path $env:LOCALAPPDATA "nvs\nvs.cmd"
+$basePath = Get-RepositoryBasePath
 
 Push-Location $repoRoot
 
 try {
   if (-not $SkipBuild) {
     if (Test-Path $nvsPath) {
-      Invoke-Step "cmd.exe" @("/c", "call `"$nvsPath`" use 22.12.0 && npm run build")
+      Invoke-Step "cmd.exe" @("/c", "set `"NEXT_PUBLIC_BASE_PATH=$basePath`" && call `"$nvsPath`" use 22.12.0 && npm run build")
     }
     else {
-      Invoke-Step "cmd.exe" @("/c", "npm run build")
+      Invoke-Step "cmd.exe" @("/c", "set `"NEXT_PUBLIC_BASE_PATH=$basePath`" && npm run build")
     }
   }
 

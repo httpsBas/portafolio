@@ -1,25 +1,26 @@
+import { withBasePath } from "@/lib/base-path";
 import { Link } from "@/types";
 
 const links: Link[] = [
   {
     title: 'Home',
     href: '/',
-    thumbnail: '/assets/nav-link-previews/landing.png'
+    thumbnail: withBasePath('/assets/nav-link-previews/landing.png')
   },
   {
     title: 'About',
     href: '/#about',
-    thumbnail: '/assets/nav-link-previews/about.png'
+    thumbnail: withBasePath('/assets/nav-link-previews/about.png')
   },
   {
     title: 'Skills',
     href: '/#skills',
-    thumbnail: '/assets/nav-link-previews/skills.png'
+    thumbnail: withBasePath('/assets/nav-link-previews/skills.png')
   },
   {
     title: 'Projects',
     href: '/#projects',
-    thumbnail: '/assets/nav-link-previews/projects.png'
+    thumbnail: withBasePath('/assets/nav-link-previews/projects.png')
   },
   // {
   //   title: 'Skills',
@@ -34,12 +35,12 @@ const links: Link[] = [
   {
     title: 'Blogs',
     href: '/blogs',
-    thumbnail: '/assets/nav-link-previews/blog.png',
+    thumbnail: withBasePath('/assets/nav-link-previews/blog.png'),
   },
   {
     title: 'Contact',
     href: '/#contact',
-    thumbnail: '/assets/nav-link-previews/contact.png'
+    thumbnail: withBasePath('/assets/nav-link-previews/contact.png')
   }
 ];
 

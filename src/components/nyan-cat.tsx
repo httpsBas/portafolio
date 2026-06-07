@@ -1,4 +1,5 @@
 "use client";
+import { withBasePath } from "@/lib/base-path";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import {
@@ -92,7 +93,7 @@ const AnimatedDiv = ({
       onClick={handlePause}
     >
       <img
-        src="/assets/nyan-cat.gif"
+        src={withBasePath("/assets/nyan-cat.gif")}
         className={cn("fixed z-10 h-40 w-auto")}
         alt="Nyan Cat"
       />

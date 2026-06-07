@@ -1,4 +1,5 @@
 "use client";
+import { withBasePath } from "@/lib/base-path";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -17,11 +18,11 @@ Whether you're a newbie or a seasoned coder, join the community to paddle throug
 creativity soar.`,
     link: "https://www.codingducks.live",
     images: [
-      "/assets/projects-screenshots/codingducks/1.png",
-      "/assets/projects-screenshots/codingducks/2.png",
-      "/assets/projects-screenshots/codingducks/3.png",
-      "/assets/projects-screenshots/codingducks/4.png",
-      "/assets/projects-screenshots/codingducks/5.png",
+      withBasePath("/assets/projects-screenshots/codingducks/1.png"),
+      withBasePath("/assets/projects-screenshots/codingducks/2.png"),
+      withBasePath("/assets/projects-screenshots/codingducks/3.png"),
+      withBasePath("/assets/projects-screenshots/codingducks/4.png"),
+      withBasePath("/assets/projects-screenshots/codingducks/5.png"),
     ],
   },
   {
@@ -31,10 +32,10 @@ creativity soar.`,
 Join the community for intriguing conversations and mysterious encounters.`,
     link: "https://ghostchatt.vercel.app/",
     images: [
-      "/assets/projects-screenshots/ghostchat/1.png",
-      "/assets/projects-screenshots/ghostchat/2.png",
-      "/assets/projects-screenshots/ghostchat/3.png",
-      "/assets/projects-screenshots/ghostchat/4.png",
+      withBasePath("/assets/projects-screenshots/ghostchat/1.png"),
+      withBasePath("/assets/projects-screenshots/ghostchat/2.png"),
+      withBasePath("/assets/projects-screenshots/ghostchat/3.png"),
+      withBasePath("/assets/projects-screenshots/ghostchat/4.png"),
     ],
   },
   {
@@ -44,11 +45,11 @@ Join the community for intriguing conversations and mysterious encounters.`,
 best deals on luxury brands and products. Join our savvy community of shoppers and unlock access to premium coupons.`,
     link: "https://www.couponluxury.com/",
     images: [
-      "/assets/projects-screenshots/couponluxury/1.png",
-      "/assets/projects-screenshots/couponluxury/2.png",
-      "/assets/projects-screenshots/couponluxury/3.png",
-      "/assets/projects-screenshots/couponluxury/4.png",
-      "/assets/projects-screenshots/couponluxury/5.png",
+      withBasePath("/assets/projects-screenshots/couponluxury/1.png"),
+      withBasePath("/assets/projects-screenshots/couponluxury/2.png"),
+      withBasePath("/assets/projects-screenshots/couponluxury/3.png"),
+      withBasePath("/assets/projects-screenshots/couponluxury/4.png"),
+      withBasePath("/assets/projects-screenshots/couponluxury/5.png"),
     ],
   },
   {
@@ -57,7 +58,7 @@ best deals on luxury brands and products. Join our savvy community of shoppers a
     description: `the go-to app for JNTUA students, empowering them to analyze, compare, and view classwise results effortlessly.
      Dive into your academic journey with ease, track your progress, and gain valuable insights.`,
     link: "/projects/4",
-    images: ["/assets/projects-screenshots/jra/1.png"],
+    images: [withBasePath("/assets/projects-screenshots/jra/1.png")],
   },
 ];
 function Page() {

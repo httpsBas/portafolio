@@ -3,6 +3,7 @@ import SlideShow from "@/components/slide-show";
 import { Button } from "@/components/ui/button";
 import { TypographyH3, TypographyP } from "@/components/ui/typography";
 import { ArrowUpRight, ExternalLink, Link2, MoveUpRight } from "lucide-react";
+import { withBasePath } from "@/lib/base-path";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -28,7 +29,7 @@ import {
   SiVuedotjs,
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
-const BASE_PATH = "/assets/projects-screenshots";
+const BASE_PATH = withBasePath("/assets/projects-screenshots");
 
 const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
   return (
@@ -239,7 +240,7 @@ const projects: Project[] = [
     id: "codingducks",
     category: "Coding platform",
     title: "Coding Ducks",
-    src: "/assets/projects-screenshots/codingducks/landing.png",
+    src: withBasePath("/assets/projects-screenshots/codingducks/landing.png"),
     screenshots: ["landing.png"],
     skills: {
       frontend: [
@@ -341,7 +342,7 @@ const projects: Project[] = [
     id: "couponluxury",
     category: "Coupon site",
     title: "Coupon Luxury",
-    src: "/assets/projects-screenshots/couponluxury/landing.png",
+    src: withBasePath("/assets/projects-screenshots/couponluxury/landing.png"),
     screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png"],
     live: "https://www.couponluxury.com/",
     skills: {
@@ -432,7 +433,7 @@ const projects: Project[] = [
     id: "the-booking-desk",
     category: "Travel",
     title: "The Booking Desk",
-    src: "/assets/projects-screenshots/the-booking-desk/landing.png",
+    src: withBasePath("/assets/projects-screenshots/the-booking-desk/landing.png"),
     screenshots: ["1.png"],
     live: "https://thebookingdesk.com/",
     skills: {
@@ -498,7 +499,7 @@ const projects: Project[] = [
     id: "portfolio",
     category: "Portfolio",
     title: "My Portfolio",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
+    src: withBasePath("/assets/projects-screenshots/portfolio/landing.png"),
     screenshots: ["1.png"],
     live: "http://nareshkhatri.vercel.app",
     github:"https://github.com/Naresh-Khatri/Portfolio",
@@ -564,7 +565,7 @@ const projects: Project[] = [
     id: "ghostchat",
     category: "Anonymous chat",
     title: "GhostChat",
-    src: "/assets/projects-screenshots/ghostchat/1.png",
+    src: withBasePath("/assets/projects-screenshots/ghostchat/1.png"),
     screenshots: ["1.png", "2.png", "3.png", "4.png"],
     live: "https://ghostchat.vercel.app",
     github:"https://github.com/Naresh-Khatri/GhostChat",
@@ -600,7 +601,7 @@ const projects: Project[] = [
     id: "jra",
     category: "Result analyzer",
     title: "JNTUA Results Analyzer",
-    src: "/assets/projects-screenshots/jra/1.png",
+    src: withBasePath("/assets/projects-screenshots/jra/1.png"),
     screenshots: ["1.png"],
     live: "https://naresh-khatri.github.io/JNTUA-result-analyser-spa/#/",
     skills: {

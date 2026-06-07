@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
+import { withBasePath } from "@/lib/base-path";
 
 export const useSounds = () => {
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -14,12 +15,12 @@ export const useSounds = () => {
         const ctx = new AudioContext();
         audioContextRef.current = ctx;
 
-        const response = await fetch('/assets/keycap-sounds/press.mp3');
+        const response = await fetch(withBasePath('/assets/keycap-sounds/press.mp3'));
         const arrayBuffer = await response.arrayBuffer();
         const decodedBuffer = await ctx.decodeAudioData(arrayBuffer);
         pressBufferRef.current = decodedBuffer;
 
-        const releaseResponse = await fetch('/assets/keycap-sounds/release.mp3');
+        const releaseResponse = await fetch(withBasePath('/assets/keycap-sounds/release.mp3'));
         const releaseArrayBuffer = await releaseResponse.arrayBuffer();
         const releaseDecodedBuffer = await ctx.decodeAudioData(releaseArrayBuffer);
         releaseBufferRef.current = releaseDecodedBuffer;
